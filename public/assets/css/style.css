@@ -1,0 +1,19 @@
+
+.error_div {
+    width: 500px;
+    margin: 15px auto;
+    color: red;
+}
+
+.error {
+    color: red;
+    margin: 0px;
+    padding: 0px;
+}
+
+#message {
+    width: 250px;
+    height: 20px;
+    color: red;
+    margin: 0px auto;
+}

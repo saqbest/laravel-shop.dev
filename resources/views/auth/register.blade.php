@@ -11,13 +11,10 @@
     {!! csrf_field() !!}
 
     <div>
-        First name
-        <input type="text" name="first_name" value="{{ old('first_name') }}">
+        Name
+        <input type="text" name="name" value="{{ old('name') }}">
     </div>
-    <div>
-        Last name
-        <input type="text" name="last_name" value="{{ old('last_name') }}">
-    </div>
+
     <div>
         Email
         <input type="text" name="email" value="{{ old('email') }}">
@@ -32,8 +29,10 @@
         Confirm Password
         <input type="password" name="password_confirmation">
     </div>
-    <input type="file" name="file" id="file">
-
+    <div>
+        <input type="radio" name="role" value="1"> Buyer<br>
+        <input type="radio" name="role" value="2"> Seller<br>
+    </div>
     <div>
         <button type="submit">Register</button>
     </div>
