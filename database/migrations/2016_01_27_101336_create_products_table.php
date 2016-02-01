@@ -17,9 +17,13 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->integer('price');
             $table->integer('quantity');
-            $table->string('currency', 4);
             $table->string('image');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+            $table->foreign('user_id')
+                ->references('id')->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

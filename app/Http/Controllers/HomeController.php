@@ -94,6 +94,11 @@ class HomeController extends Controller
         //
     }
 
+    public function getAllProducts()
+    {
+        $user_id = Auth::user()->id;
+
+    }
     /**
      * Show the form for editing the specified resource.
      *
