@@ -20,17 +20,17 @@ class HomeController extends Controller
     public function index()
     {
 
-        $role = Auth::user()->role_id;
         if (Auth::guest()) {
             return Redirect::to('auth/login');
+        } else {
+            $role = Auth::user()->role_id;
+            if ($role == 1) {
 
-        } elseif ($role == 1) {
+                return view('buyer.index');
 
-            return view('buyer.index');
-
-        } elseif ($role == 2) {
-            return view('seller.index');
-
+            } elseif ($role == 2) {
+                return view('seller.index');
+            }
         }
     }
 
@@ -41,6 +41,7 @@ class HomeController extends Controller
      */
     public function create(array $data)
     {
+        $user_id = Auth::user()->id;
         $file = $data['photo'];
         if ($file->move('uploads', $file->getClientOriginalName())) {
             return Products::create([
@@ -49,6 +50,7 @@ class HomeController extends Controller
                 'image' => $file->getClientOriginalName(),
                 'quantity' => $data['quantity'],
                 'description' => $data['description'],
+                'user_id' => $user_id,
             ]);
         }
     }

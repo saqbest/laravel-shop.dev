@@ -22,10 +22,14 @@ $(document).ready(function () {
                     processData: false,
                     contentType: false,
                     success: function (data, textStatus, jqXHR) {
-
+                        $("#message").html("<b>" + 'Information saved' + "</b> ");
+                        $('#product_name').val('');
+                        $('#quantity').val('')
+                        $('#price').val('');
+                        $('#description').val('');
+                        $('#photo').val('');
                     },
                     error: function (jqXHR, textStatus, errorThrown, data) {
-                        $("#message").html("<b>" + 'Information saved' + "</b> ");
 
                     }
                 })
