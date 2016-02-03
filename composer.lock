@@ -4,9 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "87391a9ed934cd8d492d83ee60662e8f",
-    "content-hash": "09a48dc7cddb0f6d91b8114087caaf70",
+    "hash": "6c234b2d5540c1d65cf95f20e5248298",
+    "content-hash": "1c554071ae7aca83e51f5dd181ab76f1",
     "packages": [
+        {
+            "name": "casinelli/currency",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Casinelli/Currency.git",
+                "reference": "91cb17b42a727efc95185e181617804cbf7e26a3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Casinelli/Currency/zipball/91cb17b42a727efc95185e181617804cbf7e26a3",
+                "reference": "91cb17b42a727efc95185e181617804cbf7e26a3",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/cache": "~5.0",
+                "illuminate/support": "~5.0",
+                "illuminate/view": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Casinelli\\Currency": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD 2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Stainback",
+                    "email": "daniel@lyften.com"
+                },
+                {
+                    "name": "Giovanni Casinelli",
+                    "email": "giovanni.casinelli@gmail.com"
+                }
+            ],
+            "description": "Handles currency for Laravel 5.",
+            "keywords": [
+                "currency",
+                "exchange rate",
+                "laravel",
+                "laravel5",
+                "money"
+            ],
+            "time": "2015-10-12 17:30:35"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "3.0.0",
@@ -841,16 +896,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7"
+                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
-                "reference": "dd8998b7c846f6909f4e7a5f67fabebfc412a4f7",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/e6f80ab77885151908d0ec743689ca700886e8b0",
+                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0",
                 "shasum": ""
             },
             "require": {
@@ -885,7 +940,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-01-06 13:31:20"
+            "time": "2016-01-29 16:19:52"
         },
         {
             "name": "psr/log",

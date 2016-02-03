@@ -9,6 +9,7 @@ use Auth;
 use Redirect;
 use Validator;
 use App\models\Products;
+use Casinelli\Currency\Facades\Currency;
 
 class HomeController extends Controller
 {
@@ -101,6 +102,13 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
 
     }
+
+
+    public function test()
+    {
+        echo Currency::format(12.00, 'AMD');
+    }
+
     /**
      * Show the form for editing the specified resource.
      *

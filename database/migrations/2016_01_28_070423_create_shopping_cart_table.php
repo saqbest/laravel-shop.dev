@@ -21,7 +21,7 @@ class CreateShoppingCartTable extends Migration
             $table->integer('quantity');
 
             $table->foreign('currency_id')
-                ->references('id')->on('currencies')
+                ->references('id')->on('currency')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
             $table->foreign('product_id')

@@ -144,8 +144,8 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        Illuminate\Html\HtmlServiceProvider::class
-
+        Illuminate\Html\HtmlServiceProvider::class,
+        Casinelli\Currency\CurrencyServiceProvider::class,
 
     ],
 
@@ -196,7 +196,9 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
         'Form' => Illuminate\Html\FormFacade::class,
-        'HTML' => Illuminate\Html\HtmlFacade::class
+        'HTML' => Illuminate\Html\HtmlFacade::class,
+        'Currency' => Casinelli\Currency\Facades\Currency::class,
+
     ],
 
 ];
