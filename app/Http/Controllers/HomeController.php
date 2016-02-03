@@ -21,6 +21,16 @@ class HomeController extends Controller
     public function index()
     {
 
+        $currencies = $users = \DB::table('currency')->lists('code', 'code');
+        if (!empty(session('currency'))) {
+            $currency = session('currency');
+        } elseif (isset($_POST['currency'])) {
+            \Session::put('currency', $_POST['currency']);
+            $currency = session('currency');
+        } else {
+            $currency = 'AMD';
+        }
+
         if (Auth::guest()) {
             return Redirect::to('auth/login');
         } else {
@@ -30,7 +40,10 @@ class HomeController extends Controller
                 return view('buyer.index');
 
             } elseif ($role == 2) {
-                return view('seller.index');
+                $user_id = Auth::user()->id;
+
+                $products = Products::where('user_id', '=', $user_id)->get();
+                return view('seller.index', ['products' => $products, 'currency' => $currency, 'currencies' => $currencies]);
             }
         }
     }

@@ -4,15 +4,39 @@
 
 
 @section('content')
+    <form id="add_form" class="form-horizontal" action="" method="post"
+          enctype="multipart/form-data">
+        {!! csrf_field() !!}
+        {!! Form::select('currency', $currencies, $currency,['class' => 'currency']) !!}
+    </form>
 
     <div class="bs-example">
         <ul class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#sectionA">Add product</a></li>
-            <li><a data-toggle="tab" href="#sectionB">Product list</a></li>
+            <li class="active"><a data-toggle="tab" href="#sectionA">Product list</a></li>
+            <li><a data-toggle="tab" href="#sectionB">Add product</a></li>
 
         </ul>
         <div class="tab-content">
             <div id="sectionA" class="tab-pane fade in active">
+                <div class="cont">
+                    <p>Product List</p>
+                    <ul class="products">
+
+                        @foreach ($products as $product)
+                            <li>
+                                <a href="#">
+                                    <img src="/uploads/{{$product->image}}">
+                                    <h4>{{ $product->name }}</h4>
+                                    <p>@currency($product->price , $currency)</p>
+                                    <span> Quantity :{{$product->quantity}}</span>
+                                </a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+
+            </div>
+            <div id="sectionB" class="tab-pane fade">
                 <div class="cont">
                     @if (count($errors) > 0)
                         <div class="alert alert-danger">
@@ -102,12 +126,6 @@
                     <div id="message"></div>
 
                 </div>
-            </div>
-            <div id="sectionB" class="tab-pane fade">
-                <div class="cont">
-                    <p>Product List</p>
-                </div>
-
 
             </div>
         </div>
