@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-theme.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/flaticon.css') }}">
 </head>
 <body>
 
@@ -14,8 +15,6 @@
 <script src={{ URL::asset('/assets/js/jquery.js') }} type="text/javascript"></script>
 <script src={{ URL::asset('/assets/js/jquery-ui.js') }} type="text/javascript"></script>
 <script src={{ URL::asset('/assets/js/bootstrap.min.js') }} type="text/javascript"></script>
-<script src={{ URL::asset('/assets/js/validation-rules.js') }} type="text/javascript"></script>
 <script src={{ URL::asset('/assets/js/script.js') }} type="text/javascript"></script>
-<script src={{ URL::asset('/assets/js/product-create.js') }} type="text/javascript"></script>
 </body>
 </html>

@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6c234b2d5540c1d65cf95f20e5248298",
-    "content-hash": "1c554071ae7aca83e51f5dd181ab76f1",
+    "hash": "9e275c8cae3cd56b188966e49a9623b1",
+    "content-hash": "e199d7d0295e15e37734fb2b1b18be9f",
     "packages": [
         {
             "name": "casinelli/currency",
@@ -465,16 +465,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.1.28",
+            "version": "v5.1.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "3f0fd27939dfdafb1e50058423cd24e640894ba2"
+                "reference": "7e7ba568ffbc8f3f00778f2e8f41fb92127944fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/3f0fd27939dfdafb1e50058423cd24e640894ba2",
-                "reference": "3f0fd27939dfdafb1e50058423cd24e640894ba2",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/7e7ba568ffbc8f3f00778f2e8f41fb92127944fd",
+                "reference": "7e7ba568ffbc8f3f00778f2e8f41fb92127944fd",
                 "shasum": ""
             },
             "require": {
@@ -589,7 +589,57 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2015-12-31 17:41:30"
+            "time": "2016-02-02 14:56:40"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "f62269629b2a1093039733517bd7e75b3f98dffb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/f62269629b2a1093039733517bd7e75b3f98dffb",
+                "reference": "f62269629b2a1093039733517bd7e75b3f98dffb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.1.*",
+                "illuminate/routing": "5.1.*",
+                "illuminate/session": "5.1.*",
+                "illuminate/support": "5.1.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "time": "2015-11-28 08:27:09"
         },
         {
             "name": "league/flysystem",
@@ -795,6 +845,182 @@
                 "schedule"
             ],
             "time": "2016-01-26 21:23:30"
+        },
+        {
+            "name": "nayjest/builder",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/Builder.git",
+                "reference": "bcb25e6b70657226dac5bdf2beafc1b66ff3071c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/Builder/zipball/bcb25e6b70657226dac5bdf2beafc1b66ff3071c",
+                "reference": "bcb25e6b70657226dac5bdf2beafc1b66ff3071c",
+                "shasum": ""
+            },
+            "require": {
+                "nayjest/manipulator": "~1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "codeclimate/php-test-reporter": "dev-master",
+                "mockery/mockery": "dev-master@dev",
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nayjest\\Builder\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii Stepanenko",
+                    "email": "mail@vitaliy.in"
+                }
+            ],
+            "description": "PHP package for instantiating objects using configurations",
+            "time": "2015-06-04 19:28:54"
+        },
+        {
+            "name": "nayjest/grids",
+            "version": "v1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/Grids.git",
+                "reference": "409d4d141787178c7179f270321aa0b69f1e49ca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/Grids/zipball/409d4d141787178c7179f270321aa0b69f1e49ca",
+                "reference": "409d4d141787178c7179f270321aa0b69f1e49ca",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=4.2",
+                "nayjest/builder": "~2",
+                "php": ">=5.4.0"
+            },
+            "suggest": {
+                "laravelcollective/html": "Required to work with Laravel 5.X",
+                "maatwebsite/excel": "Required to work with Excel export component"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Nayjest\\Grids\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii [Nayjest] Stepanenko",
+                    "email": "mail@vitaliy.in",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Grids for Laravel 4 & Laravel 5 frameworks",
+            "homepage": "https://github.com/Nayjest/Grids",
+            "keywords": [
+                "bootstrap",
+                "database",
+                "eloquent",
+                "grid",
+                "html",
+                "laravel",
+                "laravel-5",
+                "laravel5",
+                "tables"
+            ],
+            "time": "2016-01-28 12:17:38"
+        },
+        {
+            "name": "nayjest/manipulator",
+            "version": "v1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/manipulator.git",
+                "reference": "2151acc6ef1fc93955c35465513bb5e94c12c63b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/manipulator/zipball/2151acc6ef1fc93955c35465513bb5e94c12c63b",
+                "reference": "2151acc6ef1fc93955c35465513bb5e94c12c63b",
+                "shasum": ""
+            },
+            "require": {
+                "nayjest/str-case-converter": "~1",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii Stepanenko",
+                    "email": "mail@vitaliy.in"
+                }
+            ],
+            "description": "Utilities for manipulating PHP objects",
+            "time": "2015-10-23 14:15:00"
+        },
+        {
+            "name": "nayjest/str-case-converter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Nayjest/StrCaseConverter.git",
+                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Nayjest/StrCaseConverter/zipball/e30f16afec3ed83e12369555e264263c23cf68bb",
+                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalii Stepanenko",
+                    "email": "mail@vitaliy.in"
+                }
+            ],
+            "description": "Library for converting strings from camel case to snake case and vice versa.",
+            "time": "2015-06-04 13:11:29"
         },
         {
             "name": "nesbot/carbon",
@@ -2030,6 +2256,68 @@
             "time": "2015-06-14 21:17:01"
         },
         {
+            "name": "folklore/image",
+            "version": "v0.2.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Folkloreatelier/laravel-image.git",
+                "reference": "a05f18c0a1467137acb290bb3a1a8fa34aedc930"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Folkloreatelier/laravel-image/zipball/a05f18c0a1467137acb290bb3a1a8fa34aedc930",
+                "reference": "a05f18c0a1467137acb290bb3a1a8fa34aedc930",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=5.0 <5.2",
+                "imagine/imagine": "0.6.*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": ">=3.0 <3.2"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "tests/ImageTestCase.php"
+                ],
+                "psr-0": {
+                    "Folklore\\Image\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Folklore",
+                    "email": "info@atelierfolklore.ca",
+                    "homepage": "http://atelierfolklore.ca"
+                },
+                {
+                    "name": "David Mongeau-Petitpas",
+                    "email": "dmp@atelierfolklore.ca",
+                    "homepage": "http://mongo.ca",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Image manipulation library for Laravel 4 based on Imagine and inspired by Croppa for easy url based manipulation",
+            "homepage": "http://github.com/Folkloreatelier/laravel-image",
+            "keywords": [
+                "gd",
+                "gmagick",
+                "image",
+                "imagick",
+                "imagine",
+                "laravel",
+                "thumbnail",
+                "watermark"
+            ],
+            "time": "2016-01-01 11:40:13"
+        },
+        {
             "name": "fzaninotto/faker",
             "version": "v1.5.0",
             "source": {
@@ -2125,6 +2413,63 @@
                 "test"
             ],
             "time": "2015-05-11 14:41:42"
+        },
+        {
+            "name": "imagine/imagine",
+            "version": "v0.6.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/avalanche123/Imagine.git",
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/avalanche123/Imagine/zipball/149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "reference": "149041d2a1b517107bfe270ca2b1a17aa341715d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "sami/sami": "dev-master"
+            },
+            "suggest": {
+                "ext-gd": "to use the GD implementation",
+                "ext-gmagick": "to use the Gmagick implementation",
+                "ext-imagick": "to use the Imagick implementation"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-develop": "0.7-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Imagine": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bulat Shakirzyanov",
+                    "email": "mallluhuct@gmail.com",
+                    "homepage": "http://avalanche123.com"
+                }
+            ],
+            "description": "Image processing for PHP 5.3",
+            "homepage": "http://imagine.readthedocs.org/",
+            "keywords": [
+                "drawing",
+                "graphics",
+                "image manipulation",
+                "image processing"
+            ],
+            "time": "2015-09-19 16:54:05"
         },
         {
             "name": "mockery/mockery",
@@ -2654,16 +2999,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.21",
+            "version": "4.8.22",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c"
+                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/ea76b17bced0500a28098626b84eda12dbcf119c",
-                "reference": "ea76b17bced0500a28098626b84eda12dbcf119c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/dfb11aa5236376b4fc63853cf746af39fe780e72",
+                "reference": "dfb11aa5236376b4fc63853cf746af39fe780e72",
                 "shasum": ""
             },
             "require": {
@@ -2722,7 +3067,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-12-12 07:45:58"
+            "time": "2016-02-02 09:01:21"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -3153,16 +3498,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691"
+                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/3df409958a646dad2bc5046c3fb671ee24a1a691",
-                "reference": "3df409958a646dad2bc5046c3fb671ee24a1a691",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/3cf0709d7fe936e97bee9e954382e449003f1d9a",
+                "reference": "3cf0709d7fe936e97bee9e954382e449003f1d9a",
                 "shasum": ""
             },
             "require": {
@@ -3198,7 +3543,7 @@
             ],
             "description": "Symfony Yaml Component",
             "homepage": "https://symfony.com",
-            "time": "2015-12-26 13:39:53"
+            "time": "2016-02-02 13:44:19"
         }
     ],
     "aliases": [],

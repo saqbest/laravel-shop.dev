@@ -10,5 +10,7 @@ $(document).ready(function () {
 
             })
     })
-
+    $(".add").click(function () {
+        var key = $(this).data('key');
+    })
 })

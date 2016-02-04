@@ -37,7 +37,12 @@
     </head>
     <body>
         <div class="container">
+
             <div class="content">
+                <?php
+                var_dump(gd_info());
+
+                ?>
                 <div class="title">@currency(12.00, 'RUB')</div>
             </div>
         </div>

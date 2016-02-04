@@ -22,12 +22,21 @@ $(document).ready(function () {
                     processData: false,
                     contentType: false,
                     success: function (data, textStatus, jqXHR) {
-                        $("#message").html("<b>" + 'Information saved' + "</b> ");
+                        $(".products").append('<li>\
+                            <a href="#">\
+                            <img src="/uploads/' + $('#photo').prop('files')[0].name + '">\
+                            <h4>' + $('#product_name').val() + '</h4>\
+                            <p>' + '$' + $('#price').val() + '</p>\
+                        <span> Quantity :' + $('#quantity').val() + '</span>\
+                        </a> </li>')
+
                         $('#product_name').val('');
                         $('#quantity').val('')
                         $('#price').val('');
                         $('#description').val('');
                         $('#photo').val('');
+                        $("#message").html("<b>" + 'Information saved' + "</b> ");
+
                     },
                     error: function (jqXHR, textStatus, errorThrown, data) {
 

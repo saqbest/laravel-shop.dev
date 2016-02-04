@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.seller')
 
 @section('title', 'Seller')
 
@@ -9,7 +9,7 @@
         {!! csrf_field() !!}
         {!! Form::select('currency', $currencies, $currency,['class' => 'currency']) !!}
     </form>
-
+    <a href="auth/logout" style="float: right">Logout</a>
     <div class="bs-example">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#sectionA">Product list</a></li>

@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\Http\Controllers\Controller;
 use Auth;
 use Redirect;
 use Validator;
@@ -36,8 +35,9 @@ class HomeController extends Controller
         } else {
             $role = Auth::user()->role_id;
             if ($role == 1) {
+                $products = Products::all();
 
-                return view('buyer.index');
+                return view('buyer.index', ['products' => $products, 'currency' => $currency, 'currencies' => $currencies]);
 
             } elseif ($role == 2) {
                 $user_id = Auth::user()->id;
@@ -58,6 +58,11 @@ class HomeController extends Controller
         $user_id = Auth::user()->id;
         $file = $data['photo'];
         if ($file->move('uploads', $file->getClientOriginalName())) {
+            \Image::make('/uploads/' . $file->getClientOriginalName(), array(
+                'width' => 300,
+                'height' => 300,
+                //'grayscale' => true
+            ))->save('uploads/300x300/' . $file->getClientOriginalName());
             return Products::create([
                 'name' => $data['product_name'],
                 'price' => $data['price'],
@@ -116,9 +121,26 @@ class HomeController extends Controller
 
     }
 
+    public function AddToCard()
+    {
+
+    }
 
     public function test()
     {
+
+        $cfg = [
+            'src' => 'App\models\Products',
+            'columns' => [
+                'id',
+                'name',
+                'price',
+                'quantity',
+                'quantity',
+            ]
+        ];
+        echo \Grids::make($cfg);
+
         echo Currency::format(12.00, 'AMD');
     }
 
