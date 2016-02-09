@@ -9,7 +9,6 @@
         "laravel/framework": "5.1.*",
         "illuminate/html": "5.*",
         "casinelli/currency": "^1.0",
-        "nayjest/grids": "^1.1",
         "laravelcollective/html": "^5"
     },
     "require-dev": {

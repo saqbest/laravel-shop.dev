@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\models\ShoppingCard;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use Auth;
@@ -27,7 +28,8 @@ class HomeController extends Controller
             \Session::put('currency', $_POST['currency']);
             $currency = session('currency');
         } else {
-            $currency = 'AMD';
+            \Session::put('currency', 'AMD');
+            $currency = session('currency');
         }
 
         if (Auth::guest()) {
@@ -121,25 +123,80 @@ class HomeController extends Controller
 
     }
 
-    public function AddToCard()
+    public function AddToCart()
     {
+        if (isset($_POST['key'])) {
+            $user_id = Auth::user()->id;
+            $product_id = $_POST['key'];
+            $currency = session('currency');
+
+            ShoppingCard::create([
+                'user_id' => $user_id,
+                'product_id' => $product_id,
+                'currency' => $currency
+            ]);
+            $product = Products::find($_POST['key']);
+            print_r($currency);
+
+        } else {
+            return false;
+        }
+    }
+
+    public function getAllCartItems()
+    {
+        if (!Auth::guest()) {
+            $user_id = Auth::user()->id;
+            // $products = \DB::table('shopping_card')->where('user_id', $user_id)->get();
+
+            $products = ShoppingCard::where('user_id', $user_id)->get();
+            return view('buyer.cart', ['products' => $products]);
+
+            //var_dump($products->product_id);
+        }
+    }
+
+    public function deleteCartItem()
+    {
+        if (isset($_POST['key'])) {
+            $line_id = $_POST['key'];
+            $cartItem = ShoppingCard::find($line_id);
+
+            $cartItem->delete();
+        }
+    }
+
+    public function setQuantity()
+    {
+
+        if (isset($_POST['key']) && isset($_POST['quantity']) && isset($_POST['info'])) {
+            $buy_quantity = $_POST['quantity'];
+            $product = Products::find($_POST['info']);
+            $product_quantity = $product->quantity;
+            if ($product_quantity >= $buy_quantity) {
+                $line_id = $_POST['key'];
+                $cartItem = ShoppingCard::find($line_id);
+                $cartItem->quantity = $buy_quantity;
+                $cartItem->save();
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function buyItem()
+    {
+        if (isset($_POST['key']) && isset($_POST['quantity']) && isset($_POST['info'])) {
+
+        }
 
     }
 
     public function test()
     {
 
-        $cfg = [
-            'src' => 'App\models\Products',
-            'columns' => [
-                'id',
-                'name',
-                'price',
-                'quantity',
-                'quantity',
-            ]
-        ];
-        echo \Grids::make($cfg);
 
         echo Currency::format(12.00, 'AMD');
     }

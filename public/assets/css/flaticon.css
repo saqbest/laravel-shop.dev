@@ -1,22 +1,33 @@
 @font-face {
-    font-family: "Flaticon";
-    src: url("../font/flaticon.eot");
-    src: url("../font/flaticon.eot#iefix") format("embedded-opentype"),
-    url("../font/flaticon.woff") format("woff"),
-    url("../font/flaticon.ttf") format("truetype"),
-    url("../font/flaticon.svg") format("svg");
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Flaticon";
+	src: url("../font/flaticon.eot");
+	src: url("../font/flaticon.eot#iefix") format("embedded-opentype"),
+	url("../font/flaticon.woff") format("woff"),
+	url("../font/flaticon.ttf") format("truetype"),
+	url("../font/flaticon.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
 }
-
 [class^="flaticon-"]:before, [class*=" flaticon-"]:before,
 [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
-    font-family: Flaticon;
-    /*font-size: 20px;*/
-    font-style: normal;
-    /*margin-left: 20px;*/
+	font-family: Flaticon;
+	/*
+    font-size: 20px;
+    */
+	font-style: normal;
+	/*
+    margin-left: 20px;
+    */
 }
 
-.flaticon-shopper31:before {
-    content: "\e000";
+.flaticon-delete96:before {
+	content: "\e000";
+}
+
+.flaticon-refresh57:before {
+	content: "\e001";
+}
+
+.flaticon-shopping122:before {
+	content: "\e002";
 }

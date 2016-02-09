@@ -146,7 +146,6 @@ return [
         App\Providers\RouteServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         Casinelli\Currency\CurrencyServiceProvider::class,
-        'Nayjest\Grids\ServiceProvider',
         'Collective\Html\HtmlServiceProvider',
         'Folklore\Image\ImageServiceProvider',
 
@@ -203,7 +202,6 @@ return [
         'HTML' => Illuminate\Html\HtmlFacade::class,
         'Currency' => Casinelli\Currency\Facades\Currency::class,
         'HTML' => 'Collective\Html\HtmlFacade',
-        'Grids' => 'Nayjest\Grids\Grids',
         'Image' => 'Folklore\Image\Facades\Image',
 
     ],

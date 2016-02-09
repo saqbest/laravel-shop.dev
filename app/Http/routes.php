@@ -30,3 +30,11 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // create new product
 Route::post('/create', 'HomeController@store');
+// add to card
+Route::post('addtocart', 'HomeController@AddToCart');
+//show my  items
+Route::get('cart', 'HomeController@getAllCartItems');
+//delete item from shopping cart
+Route::post('deletefromcart', 'HomeController@deleteCartItem');
+// set quantity
+Route::post('quantity', 'HomeController@setQuantity');

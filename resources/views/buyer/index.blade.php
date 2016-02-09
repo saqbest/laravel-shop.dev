@@ -4,7 +4,7 @@
 
 
 @section('content')
-    <span class="flaticon-shopper31 card"><span class="total">54</span></span></span>
+    <a href="/cart"> <span class="flaticon-shopping122 card"><span class="total">0</span></span> </a>
     <form id="add_form" class="form-horizontal" action="" method="post"
           enctype="multipart/form-data">
         {!! csrf_field() !!}
@@ -17,7 +17,7 @@
             @foreach ($products as $product)
                 <li>
 
-                    <img src="/uploads/{{$product->image}}">
+                    <img src="/uploads/300x300/{{$product->image}}">
                     <h4>{{ $product->name }}</h4>
                     <p>@currency($product->price , $currency)</p>
                     <span> Quantity :{{$product->quantity}}</span>
@@ -26,18 +26,5 @@
             @endforeach
         </ul>
     </div>
-    <?php
 
-    $cfg = [
-            'src' => 'App\models\Products',
-            'columns' => [
-                    'id',
-                    'name',
-                    'price',
-                    'quantity',
-            ]
-    ];
-    echo \Grids::make($cfg);
-
-    ?>
 @endsection

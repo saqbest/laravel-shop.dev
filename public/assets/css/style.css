@@ -53,3 +53,16 @@ img {
 .add {
     float: right;
 }
+
+.refresh {
+    cursor: pointer;
+}
+
+.delete {
+    float: right;
+    cursor: pointer;
+}
+
+.buy_now {
+    float: right;
+}

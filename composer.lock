@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9e275c8cae3cd56b188966e49a9623b1",
-    "content-hash": "e199d7d0295e15e37734fb2b1b18be9f",
+    "hash": "cc65be87ef0903205d8993b468816280",
+    "content-hash": "a88cef4edf255fb77f64763e6855426a",
     "packages": [
         {
             "name": "casinelli/currency",
@@ -847,182 +847,6 @@
             "time": "2016-01-26 21:23:30"
         },
         {
-            "name": "nayjest/builder",
-            "version": "v2.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Nayjest/Builder.git",
-                "reference": "bcb25e6b70657226dac5bdf2beafc1b66ff3071c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Nayjest/Builder/zipball/bcb25e6b70657226dac5bdf2beafc1b66ff3071c",
-                "reference": "bcb25e6b70657226dac5bdf2beafc1b66ff3071c",
-                "shasum": ""
-            },
-            "require": {
-                "nayjest/manipulator": "~1",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "codeclimate/php-test-reporter": "dev-master",
-                "mockery/mockery": "dev-master@dev",
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Nayjest\\Builder\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vitalii Stepanenko",
-                    "email": "mail@vitaliy.in"
-                }
-            ],
-            "description": "PHP package for instantiating objects using configurations",
-            "time": "2015-06-04 19:28:54"
-        },
-        {
-            "name": "nayjest/grids",
-            "version": "v1.1.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Nayjest/Grids.git",
-                "reference": "409d4d141787178c7179f270321aa0b69f1e49ca"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Nayjest/Grids/zipball/409d4d141787178c7179f270321aa0b69f1e49ca",
-                "reference": "409d4d141787178c7179f270321aa0b69f1e49ca",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/support": ">=4.2",
-                "nayjest/builder": "~2",
-                "php": ">=5.4.0"
-            },
-            "suggest": {
-                "laravelcollective/html": "Required to work with Laravel 5.X",
-                "maatwebsite/excel": "Required to work with Excel export component"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Nayjest\\Grids\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vitalii [Nayjest] Stepanenko",
-                    "email": "mail@vitaliy.in",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Grids for Laravel 4 & Laravel 5 frameworks",
-            "homepage": "https://github.com/Nayjest/Grids",
-            "keywords": [
-                "bootstrap",
-                "database",
-                "eloquent",
-                "grid",
-                "html",
-                "laravel",
-                "laravel-5",
-                "laravel5",
-                "tables"
-            ],
-            "time": "2016-01-28 12:17:38"
-        },
-        {
-            "name": "nayjest/manipulator",
-            "version": "v1.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Nayjest/manipulator.git",
-                "reference": "2151acc6ef1fc93955c35465513bb5e94c12c63b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Nayjest/manipulator/zipball/2151acc6ef1fc93955c35465513bb5e94c12c63b",
-                "reference": "2151acc6ef1fc93955c35465513bb5e94c12c63b",
-                "shasum": ""
-            },
-            "require": {
-                "nayjest/str-case-converter": "~1",
-                "php": ">=5.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vitalii Stepanenko",
-                    "email": "mail@vitaliy.in"
-                }
-            ],
-            "description": "Utilities for manipulating PHP objects",
-            "time": "2015-10-23 14:15:00"
-        },
-        {
-            "name": "nayjest/str-case-converter",
-            "version": "v1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Nayjest/StrCaseConverter.git",
-                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Nayjest/StrCaseConverter/zipball/e30f16afec3ed83e12369555e264263c23cf68bb",
-                "reference": "e30f16afec3ed83e12369555e264263c23cf68bb",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.*"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Vitalii Stepanenko",
-                    "email": "mail@vitaliy.in"
-                }
-            ],
-            "description": "Library for converting strings from camel case to snake case and vice versa.",
-            "time": "2015-06-04 13:11:29"
-        },
-        {
             "name": "nesbot/carbon",
             "version": "1.21.0",
             "source": {
@@ -1122,16 +946,16 @@
         },
         {
             "name": "paragonie/random_compat",
-            "version": "1.1.6",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/paragonie/random_compat.git",
-                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0"
+                "reference": "b0e69d10852716b2ccbdff69c75c477637220790"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/e6f80ab77885151908d0ec743689ca700886e8b0",
-                "reference": "e6f80ab77885151908d0ec743689ca700886e8b0",
+                "url": "https://api.github.com/repos/paragonie/random_compat/zipball/b0e69d10852716b2ccbdff69c75c477637220790",
+                "reference": "b0e69d10852716b2ccbdff69c75c477637220790",
                 "shasum": ""
             },
             "require": {
@@ -1166,7 +990,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-01-29 16:19:52"
+            "time": "2016-02-06 03:52:05"
         },
         {
             "name": "psr/log",
