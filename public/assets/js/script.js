@@ -53,7 +53,7 @@ $(document).ready(function () {
                 })
                 .done(function (data) {
                     console.log(data)
-                    elem.prev().val('sduhsdi')
+                    elem.prev().val(quantity)
                 })
                 .error(function () {
                     alert("error");
@@ -87,5 +87,18 @@ $(document).ready(function () {
             }
         })
 
+    })
+    $('form input:checkbox').click(function () {
+        //console.log(this.value)
+        var tr = $(this).closest("tr");
+        var quantity = tr.find('.quantity');
+
+        if (quantity.attr('name') !== undefined) {
+            quantity.removeAttr('name')
+        }
+        else {
+            quantity.attr('name', 'products[' + tr.data('info') + ']')
+        }
+        console.log($(this).closest("tr").find('.quantity').attr('name'));
     })
 })

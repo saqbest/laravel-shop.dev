@@ -4,12 +4,22 @@
 
 
 @section('content')
+    <div id="top_bar">
+        <div class="md-top-bar">
+            <ul id="menu_top" class="uk-clearfix">
+                <li><a href="/"><i class="material-icons md-24"></i></a></li>
+                <li data-uk-dropdown="" style="float: right" aria-haspopup="true" aria-expanded="false" class="">
+                    <a href="{{ url('auth/logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <form id="add_form" class="form-horizontal" action="" method="post"
           enctype="multipart/form-data">
         {!! csrf_field() !!}
         {!! Form::select('currency', $currencies, $currency,['class' => 'currency']) !!}
     </form>
-    <a href="auth/logout" style="float: right">Logout</a>
     <div class="bs-example">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#sectionA">Product list</a></li>
@@ -18,21 +28,58 @@
         </ul>
         <div class="tab-content">
             <div id="sectionA" class="tab-pane fade in active">
-                <div class="cont">
-                    <p>Product List</p>
-                    <ul class="products">
+                <div id="page_content">
+                    <div id="page_content_inner">
+                        <div class="md-card">
+                            <div class="md-card-content">
+                                <div class="uk-grid" data-uk-grid-margin>
+                                    <div class="uk-width-1-1">
+                                        <div class="uk-overflow-container">
+                                            <table class="uk-table">
+                                                <thead>
+                                                <tr>
+                                                    <th>Image</th>
+                                                    <th>Product Name</th>
+                                                    <th>Price</th>
+                                                    <th>Quantity</th>
+                                                    <th>Type</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                @foreach ($products as $product)
 
-                        @foreach ($products as $product)
-                            <li>
-                                <a href="#">
-                                    <img src="/uploads/{{$product->image}}">
-                                    <h4>{{ $product->name }}</h4>
-                                    <p>@currency($product->price , $currency)</p>
-                                    <span> Quantity :{{$product->quantity}}</span>
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
+                                                    <tr>
+                                                        <td><img class="img_thumb"
+                                                                 src="/uploads/300x300/{{$product->image}}" alt=""></td>
+                                                        <td class="uk-text-large uk-text-nowrap"><a
+                                                                    href="/product/{{$product->id}}">{{ $product->name }}</a>
+                                                        </td>
+                                                        <td class="uk-text-nowrap">@currency($product->price , $currency)</td>
+                                                        <td>{{$product->quantity}}</td>
+                                                        <td class="uk-text-nowrap"><span
+                                                                    class="uk-badge uk-badge-muted">{{$product->type}}</span>
+                                                        </td>
+                                                        <td class="uk-text-nowrap">
+                                                            <a href="/product/{{$product->id}}"><i
+                                                                        class="material-icons md-24">&#xE8F4;</i></a>
+                                                            <a href="#"><i class="material-icons md-24">&#xE872;</i></a>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+
+                                                </tbody>
+                                            </table>
+                                            {!! $products->render() !!}
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
 
             </div>
@@ -97,6 +144,15 @@
 
                                 <div class="col-md-4">
                                     <textarea class="form-control" id="description" name="description"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-md-4 control-label" for="sel1">Select type:</label>
+                                <div class="col-md-4">
+                                    <select class="form-control" name="type" id="sel1">
+                                        <option value="type1">Type1</option>
+                                        <option value="type2">Type2</option>
+                                    </select>
                                 </div>
                             </div>
                             <!-- File Button -->

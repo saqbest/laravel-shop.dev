@@ -10,6 +10,7 @@ $(document).ready(function () {
                 data.append('product_name', $("#product_name").val());
                 data.append('price', $("#price").val());
                 data.append('quantity', $("#quantity").val());
+                data.append('type', $("#sel1").val());
                 data.append('description', $("#quantity").val());
 
 
@@ -22,7 +23,7 @@ $(document).ready(function () {
                     processData: false,
                     contentType: false,
                     success: function (data, textStatus, jqXHR) {
-                        $(".products").append('<li>\
+                        $(".products").prepend('<li>\
                             <a href="#">\
                             <img src="/uploads/' + $('#photo').prop('files')[0].name + '">\
                             <h4>' + $('#product_name').val() + '</h4>\
@@ -36,6 +37,7 @@ $(document).ready(function () {
                         $('#description').val('');
                         $('#photo').val('');
                         $("#message").html("<b>" + 'Information saved' + "</b> ");
+                        // location.reload();
 
                     },
                     error: function (jqXHR, textStatus, errorThrown, data) {
@@ -46,7 +48,7 @@ $(document).ready(function () {
 
         }
         else {
-            $("#message").html("Are you kidding me?");
+            $("#message").html("Image d`ont selected");
         }
 
         function beforeSubmit() {

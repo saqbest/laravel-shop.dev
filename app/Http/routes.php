@@ -15,6 +15,7 @@
     return view('welcome');
 });*/
 Route::get('/', 'HomeController@index');
+Route::post('/', 'HomeController@index');
 Route::get('home', 'HomeController@index');
 Route::post('home', 'HomeController@index');
 Route::get('test', 'HomeController@test');
@@ -38,3 +39,23 @@ Route::get('cart', 'HomeController@getAllCartItems');
 Route::post('deletefromcart', 'HomeController@deleteCartItem');
 // set quantity
 Route::post('quantity', 'HomeController@setQuantity');
+Route::get('paypal', 'PaypalPaymentController@prepareExpressCheckout');
+Route::get('paypal/index', 'PaypalPaymentController@index');
+//get products
+Route::post('/prod', 'HomeController@getProducts');
+Route::get('/prod', 'HomeController@getProducts');
+//set currency
+Route::post('/currency', 'HomeController@setCurrency');
+Route::get('/currency', 'HomeController@setCurrency');
+//show single product
+Route::get('/product/{id}', 'HomeController@showProduct');
+//edit product
+Route::get('/product/edit/{id}', 'HomeController@edit');
+//update product
+Route::any('/product/update/{id}', 'HomeController@update');
+// paypal
+Route::any('paypal', 'HomeController@paypal');
+Route::any('paypal/ok', 'BuyController@ok');
+Route::any('paypal/error', 'BuyController@error');
+//buy product
+Route::any('buy', 'BuyController@buyItem');

@@ -146,9 +146,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         Illuminate\Html\HtmlServiceProvider::class,
         Casinelli\Currency\CurrencyServiceProvider::class,
+        Anouar\Paypalpayment\PaypalpaymentServiceProvider::class,
+
         'Collective\Html\HtmlServiceProvider',
         'Folklore\Image\ImageServiceProvider',
-
 
     ],
 
@@ -201,6 +202,8 @@ return [
         'Form' => Illuminate\Html\FormFacade::class,
         'HTML' => Illuminate\Html\HtmlFacade::class,
         'Currency' => Casinelli\Currency\Facades\Currency::class,
+        'Paypalpayment' => Anouar\Paypalpayment\Facades\PaypalPayment::class,
+
         'HTML' => 'Collective\Html\HtmlFacade',
         'Image' => 'Folklore\Image\Facades\Image',
 

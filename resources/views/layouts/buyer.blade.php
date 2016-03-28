@@ -1,20 +1,45 @@
-<html>
+<!doctype html>
+<!--[if lte IE 9]>
+<html class="lte-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!-->
+<html lang="en"> <!--<![endif]-->
 <head>
-    <meta charset="utf-8"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap-theme.min.css') }}">
+
+    <!-- matchMedia polyfill for testing media queries in JS -->
+    <!--[if lte IE 9]>
+    <script type="text/javascript" src="bower_components/matchMedia/matchMedia.js"></script>
+    <script type="text/javascript" src="bower_components/matchMedia/matchMedia.addListener.js"></script>
+    <![endif]-->
+    <link rel="stylesheet"
+          href="http://fonts.googleapis.com/css?family=Source+Code+Pro:400,700%7CRoboto:400,300,500,700,400italic&amp;subset=latin,latin"
+          media="all">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/uikit.almost-flat.min.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/main.min.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
     <link rel="stylesheet" href="{{ URL::asset('assets/css/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('assets/css/bootstrap.min.css') }}">
 </head>
 <body>
+
 
 <div class="container">
     @yield('content')
 </div>
-<script src={{ URL::asset('/assets/js/jquery.js') }} type="text/javascript"></script>
-<script src={{ URL::asset('/assets/js/jquery-ui.js') }} type="text/javascript"></script>
-<script src={{ URL::asset('/assets/js/bootstrap.min.js') }} type="text/javascript"></script>
+
+<script src={{ URL::asset('assets/js/jquery.js') }} type="text/javascript"></script>
+<script src={{ URL::asset('assets/js/common.js') }} type="text/javascript"></script>
+<script src={{ URL::asset('assets/js/altair-admin-common.min.js') }} type="text/javascript"></script>
+<script src={{ URL::asset('assets/js/uikit_custom.min.js') }} type="text/javascript"></script>
+<script src={{ URL::asset('assets/js/ion.rangeSlider.min.js') }} type="text/javascript"></script>
+<script src={{ URL::asset('assets/js/forms_advanced.min.js') }} type="text/javascript"></script>
 <script src={{ URL::asset('/assets/js/script.js') }} type="text/javascript"></script>
+
 </body>
 </html>
