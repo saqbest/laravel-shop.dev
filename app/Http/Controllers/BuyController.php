@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\models\PurchasedProducts;
+use App\models\Transactions;
 use Illuminate\Http\Request;
 use Paypalpayment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\models\Products;
-
+use DB;
+use Illuminate\Support\Facades\Session;
 class BuyController extends Controller
 {
     /**
@@ -70,18 +73,20 @@ class BuyController extends Controller
     {
         $subTotal = 0;
         $data = $request->input('products');
+        Session::put('product_info', $data);
+
         $payer = Paypalpayment::payer();
         $payer->setPaymentMethod("paypal");
 
         $products = Products::whereIn('id', array_keys($data))->get();
 
         foreach ($products as $product) {
-            $quantity = $data[$product->id];
+            $quantity = $data[$product->id]['quantity'];
             $quantity = $product->quantity < $quantity ? $product->quantity : $quantity;
 
             $product_list[] = Paypalpayment::item()
                 ->setName($product->name)
-                ->setDescription($product->name)
+                ->setDescription($product->id)
                 ->setCurrency('USD')
                 ->setQuantity($quantity)
                 ->setPrice($product->price);
@@ -142,26 +147,66 @@ class BuyController extends Controller
             return "Exception: " . $ex->getMessage() . PHP_EOL;
             exit(1);
         }
-
+            //dd($payment);
         return redirect($payment->getApprovalLink());
 
     }
 
     public function ok(Request $request)
     {
-
-
-        $payment = Paypalpayment::getById($request->input('paymentId'), $this->_apiContext);
-        dd($payment);
-        foreach ($payment->transactions as $value) {
-            echo $value;
-
+        $data=session('product_info');
+        if($request->has('paymentId')&&$request->has('PayerID')){
+            $payment = Paypalpayment::getById($request->input('paymentId'), $this->_apiContext);
+            $execution = Paypalpayment::PaymentExecution();
+            $execution->setPayerId($request->input('PayerID'));
+            $payment->execute($execution,$this->_apiContext);
         }
+        else{
+            return redirect('paypal/error');
+        }
+        $payment = Paypalpayment::getById($request->input('paymentId'), $this->_apiContext);
+
+        $lastId=Transactions::create([
+            'paymentId' => $payment->id,
+            'cart' => $payment->cart,
+            'payer_email' => $payment->payer->payer_info->email,
+            'payer_first_name' => $payment->payer->payer_info->first_name,
+            'payer_last_name' => $payment->payer->payer_info->last_name,
+            'payer_id' => $payment->payer->payer_info->payer_id,
+            'shipping_recipient_name' => $payment->payer->payer_info->shipping_address->recipient_name,
+            'shipping_city' => $payment->payer->payer_info->shipping_address->city,
+            'country_code' => $payment->payer->payer_info->country_code,
+            'amount_total' => $payment->transactions[0]->amount->total,
+            'invoice_number' => $payment->transactions[0]->invoice_number,
+        ]);
+            $lastId=$lastId->id;
+        foreach ($payment->transactions[0]->item_list->items as $item){
+            $qart_info = $data[$item->description]['qart_info'];
+            DB::table('shopping_card')->where('id', '=', $qart_info)->delete();
+
+            $product = DB::table('products')
+                        ->where('id', $item->description)
+                        ->get();
+            $productNewQuantity=$product[0]->quantity-$item->quantity;
+            DB::table('products')
+                ->where('id', $item->description)
+                ->update(['quantity' => $productNewQuantity]);
+            PurchasedProducts::create([
+                'transaction_id'=>$lastId,
+                'product_name'=>$item->name,
+                'quantity'=>$item->quantity,
+                'description'=>$item->description,
+                'tax'=>$item->tax,
+            ]);
+        }
+        Session::forget('product_info');
+
+        return redirect('/');
     }
 
     public function error()
     {
-        echo 'error';
+        return redirect('/');
     }
 
     /**

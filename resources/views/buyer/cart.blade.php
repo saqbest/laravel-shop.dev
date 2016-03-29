@@ -8,13 +8,13 @@
         <div class="md-top-bar">
             <ul id="menu_top" class="uk-clearfix">
                 <li><a href="/"><i class="material-icons md-24"></i></a></li>
-                <li>Currency
+                {{--<li>Currency
                     <form id="add_form" class="form-horizontal" action="" method="post"
                           enctype="multipart/form-data">
                         {!! csrf_field() !!}
                         {!! Form::select('currency', $currencies, $currency,['class' => 'currency']) !!}
                     </form>
-                </li>
+                </li>--}}
 
                 <li data-uk-dropdown="" style="float: right" aria-haspopup="true" aria-expanded="false" class="">
                     <a href="{{ url('auth/logout') }}">Logout</a>
@@ -41,10 +41,11 @@
             {{--name="products[{{ $key }}][item]"--}}
             @foreach($products as $key => $product)
                 <tr class="buy" data-key="{{$product->id}}" data-info="{{ $product->product->id}}">
+                    <input class="cart-info" type="hidden"  value="{{$product->id}}">
                     <td><input type="checkbox" value="{{$product->product->id}}"></td>
                     <td>{{ $product->seller()}}</td>
                     <td>{{ $product->product->name}}</td>
-                    <td> @currency( $product->product->price, $product->currency)</td>
+                    <td> @currency( $product->product->price, 'USD')</td>
                     <td><input class="quantity" type="number" value="{{ $product->quantity}}">&nbsp;&nbsp; <span
                                 data-info="{{ $product->product->id}}" class="flaticon-refresh57 refresh"></span> <span
                                 class="flaticon-delete96 delete" data-key="{{$product->id}}"></span></td>
@@ -53,7 +54,7 @@
 
             </tbody>
         </table>
-            <span class=""><button type="submit" class="btn btn-primary btn-sm">Buy now</button></span>
+            <span class=""><button type="submit" class="btn btn-primary btn-sm buy_now">Buy now</button></span>
         </form>
     @else
         <p>Shopping cart is empty</p>

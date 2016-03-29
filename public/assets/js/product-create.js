@@ -37,7 +37,7 @@ $(document).ready(function () {
                         $('#description').val('');
                         $('#photo').val('');
                         $("#message").html("<b>" + 'Information saved' + "</b> ");
-                        // location.reload();
+                         location.reload();
 
                     },
                     error: function (jqXHR, textStatus, errorThrown, data) {

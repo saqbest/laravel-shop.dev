@@ -20,7 +20,7 @@
                     <a href="{{ url('auth/logout') }}">Logout</a>
                 </li>
                 <li style="float: right">
-                    <a href="/cart"> <span class="total">Shoping items: {{count($shopping_cart)}}</span> </a>
+                    <a href="/cart"><span>Shoping items:<span class="total"> {{count($shopping_cart)}}</span></span>  </a>
                 </li>
             </ul>
         </div>

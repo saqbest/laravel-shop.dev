@@ -41,7 +41,8 @@ class HomeController extends Controller
         } else {
             $role = Auth::user()->role_id;
             if ($role == 1) {
-                $products = DB::table('products');
+                $products = DB::table('products')
+                ->where('quantity','>',0);
                 $price_from = 1;
                 $price_to = 100000;
                 if ($request->has('price_range')) {
