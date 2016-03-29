@@ -14,24 +14,17 @@ class CreateTransactionsTable extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->integer('product_id')->unsigned();
-            $table->integer('currency_id')->unsigned();
-
-            $table->integer('quantity');
-
-            $table->foreign('currency_id')
-                ->references('id')->on('currency')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->foreign('product_id')
-                ->references('id')->on('products')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            $table->string('paymentId');
+            $table->string('cart');
+            $table->string('payer_email');
+            $table->string('payer_first_name');
+            $table->string('payer_last_name');
+            $table->integer('payer_id');
+            $table->string('shipping_recipient_name');
+            $table->string('shipping_city');
+            $table->string('country_code');
+            $table->integer('amount_total');
+            $table->string('invoice_number');
             $table->timestamps();
         });
     }

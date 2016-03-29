@@ -170,7 +170,6 @@ class HomeController extends Controller
                 'currency' => $currency
             ]);
             $product = Products::find($_POST['key']);
-            print_r($currency);
 
         } else {
             return false;
