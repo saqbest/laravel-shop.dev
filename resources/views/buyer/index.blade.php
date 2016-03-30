@@ -29,8 +29,7 @@
         <div id="page_content_inner">
             <div class="md-card">
                 <div class="md-card-content">
-                    <form method="post" class="uk-form-stacked">
-                        {!! csrf_field() !!}
+                    <form method="get" class="uk-form-stacked">
                         <div class="uk-grid" data-uk-grid-margin="">
                             <div class="uk-width-medium-3-10">
                                 <label for="product_search_name">Product Name</label>
