@@ -4,6 +4,9 @@
 
 
 @section('content')
+    @if (Session::get('message'))
+        {{Session::get('message')}}
+    @endif
     <div id="top_bar">
         <div class="md-top-bar">
             <ul id="menu_top" class="uk-clearfix">

@@ -201,7 +201,7 @@ class BuyController extends Controller
         }
         Session::forget('product_info');
 
-        return redirect('/');
+        return redirect('/')->with('message', 'Everything ok');;
     }
 
     public function error()
