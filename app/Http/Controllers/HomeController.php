@@ -42,7 +42,7 @@ class HomeController extends Controller
             $role = Auth::user()->role_id;
             if ($role == 1) {
                 $products = DB::table('products')
-                ->where('quantity','>',0);
+                    ->where('quantity', '>', 0);
                 $price_from = 1;
                 $price_to = 100000;
                 if ($request->has('price_range')) {
@@ -150,7 +150,7 @@ class HomeController extends Controller
         return view('product.index', ['product' => $product]);
 
     }
-    
+
     public function getAllProducts()
     {
         $user_id = Auth::user()->id;
@@ -285,5 +285,5 @@ class HomeController extends Controller
         return json_encode($data);
     }
 
-    
+
 }
